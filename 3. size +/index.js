@@ -6,8 +6,7 @@ var number = 32;
 
 bigBtn.addEventListener('click', ()=>{
     number += 2;
-    x = text.style.fontSize= `${number}px`;
-    
+    text.style.fontSize= `${number}px`;  
 });
 
 smallBtn.addEventListener('click', ()=>{
