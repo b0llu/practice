@@ -1,6 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Gemunu+Libre:wght@200&display=swap');
+
 :root {
     --primary-color: red;
     --secondary-color: green;
+}
+
+body {
+    font-family: 'Gemunu Libre', sans-serif;
 }
 
 h1 {
