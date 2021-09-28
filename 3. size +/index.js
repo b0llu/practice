@@ -6,31 +6,12 @@ const outputDiv = document.querySelector("#output");
 
 var number = 32;
 
-function increace (text) {
-    var plusTwo= document.createElement('plusTwo');
-    plusTwo.appendChild(document.createTextNode(text));
-      document.body.appendChild(plusTwo);
-
+bigBtn.addEventListener('click', ()=>{
     number += 2;
-    plusTwo.style.fontSize= `${number}px `;  
-};
+    text.style.fontSize= `${number}px`;  
+});
 
-function toIncreace () {
-    outputDiv.text = increace(inputText.value);
-}
-bigBtn.addEventListener("click", toIncreace)
-
-
-function decrease (text) {
-    var minusTwo= document.createElement('minusTwo');
-    minusTwo.appendChild(document.createTextNode(text));
-      document.body.appendChild(minusTwo);
-
+smallBtn.addEventListener('click', ()=>{
     number -= 2;
-    minusTwo.style.fontSize= `${number}px `;  
-};
-
-function toDecrease () {
-    outputDiv.text = decrease(inputText.value);
-}
-smallBtn.addEventListener("click", toDecrease)
+    text.style.fontSize= `${number}px`
+});
