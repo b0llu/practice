@@ -1,18 +1,41 @@
-const readlineSync = require ('readline-sync');
-var highestMarks= 0;
 
-const name = readlineSync.question("Enter your name! ");
-const unitTest = readlineSync.question("Enter your unit test marks! ");
-const preFinal = readlineSync.question("Enter your pre final marks! ");
-const final = readlineSync.question("Enter your final marks! ");
 
-const totalMarks = Number(unitTest)+Number(preFinal)+Number(final);
-console.log(totalMarks);
-
-if(totalMarks>highestMarks){
-  highestMarks = totalMarks;
+var student1 = {
+  name: "a",
+  unitTestMarks: 20,
+  preFinalMarks: 50,
+  finalMarks: 80,
+  totalMarks: 150
 }
-const average = Number(unitTest)+Number(preFinal)+Number(final)/300;
-console.log("The average marks are: "+average); 
+var student2 = {
+  name: "b",
+  unitTestMarks: 19,
+  preFinalMarks: 40,
+  finalMarks: 90,
+  totalMarks: 149
+}
+var student3 = {
+  name: "c",
+  unitTestMarks: 18,
+  preFinalMarks: 60,
+  finalMarks: 40,
+  totalMarks: 118
+}
+var student4 = {
+  name: "d",
+  unitTestMarks: 17,
+  preFinalMarks: 30,
+  finalMarks: 60,
+  totalMarks: 107
+}
+var student5 = {
+  name: "e",
+  unitTestMarks: 16,
+  preFinalMarks: 70,
+  finalMarks: 100,
+  totalMarks: 186
+}
 
+console.log(student5.totalMarks)
 
+console.log((student1.totalMarks + student2.totalMarks + student3.totalMarks + student4.totalMarks + student5.totalMarks) / 5)
