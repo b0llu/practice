@@ -1,11 +1,12 @@
 const input = document.querySelector("#input");
 const checkBtn = document.querySelector("#check-btn");
+const outputDiv = document.querySelector("#output");
 
 checkBtn.addEventListener("click", ()=>{
     if (input.value.length < 10 || input.value.length > 10) {
-        alert ("Minimum and Maximum length = 10");
+        outputDiv.innerHTML = "Minimum and Maximum length for the password is 10";
     } else {
-        alert ("correct")
+        outputDiv.innerHTML = "You Logged In!"
     }
 
     if (input.value.length < 10 || input.value.length > 10) {
