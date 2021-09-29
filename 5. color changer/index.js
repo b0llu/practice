@@ -1,16 +1,25 @@
-const text = document.querySelector("#text");
+const inputText = document.querySelector("#text-input");
 const redCol = document.querySelector("#red-col");
 const greenCol = document.querySelector("#green-col");
 const blueCol = document.querySelector("#blue-col");
+const outputDiv = document.querySelector("#output");
+
 
 redCol.addEventListener("click", ()=>{
-    text.style.color = "red";
+    var textInput = inputText.value;
+    outputDiv.textContent = textInput;
+    outputDiv.style.color = "red";
+    
 })
 
 greenCol.addEventListener("click", ()=>{
-    text.style.color = "green";
+    var textInput = inputText.value;
+    outputDiv.textContent = textInput;
+    outputDiv.style.color = "green"
 })
 
 blueCol.addEventListener("click", ()=>{
-    text.style.color = "blue";
+    var textInput = inputText.value;
+    outputDiv.textContent = textInput;
+    outputDiv.style.color = "blue";
 })
