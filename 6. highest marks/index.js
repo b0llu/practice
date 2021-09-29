@@ -1,20 +1,69 @@
-var readlineSync = require ('readline-sync');
-var highestMarks= 0;
+var readlineSync = require('readline-sync');
 
-for (let i=0; i < 5; i++) {
-var name = readlineSync.question("Enter your name! ");
-var unitTest = readlineSync.question("Enter your unit test marks! ");
-var preFinal = readlineSync.question("Enter your pre final marks! ");
-var final = readlineSync.question("Enter your final marks! ");
+var data = [
+  {
+  name: "",
+  unittest: "",
+  prefinal: "",
+  final: ""
+  },{
+  name: "",
+  unittest: "",
+  prefinal: "",
+  final: ""
+  },{
+  name: "",
+  unittest: "",
+  prefinal: "",
+  final: ""
+  },{
+  name: "",
+  unittest: "",
+  prefinal: "",
+  final: ""
+  },{
+  name: "",
+  unittest: "",
+  prefinal: "",
+  final: ""
+  },{
+  name: "",
+  unittest: "",
+  prefinal: "",
+  final: ""
+  }
+]
 
-var totalMarks = Number(unitTest)+Number(preFinal)+Number(final);
-console.log(totalMarks);
+var arrayOfMarks = []
+var sumOfMarks = []
+
+sum = 0
+for (i = 1; i < 6; i++) {
+  console.log(`student ${i}`)
+  var name = readlineSync.question("Enter Your Name = ")
+  data[i].name = name
+
+  var unittest = readlineSync.question("Enter Unit Test Marks = ")
+  data[i].unittest = unittest
+  var unitMarks = Number(unittest)
+
+  var prefinal = readlineSync.question("Enter Pre Final Marks = ")
+  data[i].prefinal = prefinal
+  var preFinalMarks = Number(prefinal)
+
+  var final = readlineSync.question("Enter Final Marks = ")
+  data[i].final = final
+  var finalMarks = Number(final)
+
+  arrayOfMarks.push(data[i].final)
+
+  var sum = unitMarks + preFinalMarks + finalMarks
+
+  sumOfMarks.push(sum) 
 }
 
-if(totalMarks>highestMarks){
-  highestMarks = totalMarks;
-}
-var average = Number(unitTest)+Number(preFinal)+Number(final)/300;
-console.log("The average marks are: "+average); 
+console.log(`Highest Marks Are ${Math.max(...arrayOfMarks)}`)
 
+const reducer = (previousValue, currentValue) => previousValue + currentValue;
 
+console.log(`Average of 5 Students is ${sumOfMarks.reduce(reducer) / 5}`)
