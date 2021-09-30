@@ -10,22 +10,23 @@ error401Btn.addEventListener("click", function error401 () {
     fetch(serverURL1)
     .then(function(response){
         if (response.status === 401) {
-            console.log(json)
-        }
+           alert("You Are Not Logged In")
+        } else 
+        alert("Page Not Found")
     }) 
-    .catch(function() {
-        alert("You Are Not Logged In")
-    } )
+    // .catch(function() {
+    //     alert("You Are Not Logged In")
+    // } )
 })
 
-error404Btn.addEventListener("click", function error404 (){
-    fetch(serverURL2)
-    .then(function(response){
-        if (response.status === 404) {
-            console.log(json)
-        }
-    })
-    .catch(function(){
-        alert("Page Not Found")
-    })
-})
+// error404Btn.addEventListener("click", function error404 (){
+//     fetch(serverURL2)
+//     .then(function(response){
+//         if (response.status === 404) {
+//             console.log(json)
+//         }
+//     })
+//     .catch(function(){
+//         alert("Page Not Found")
+//     })
+// })
