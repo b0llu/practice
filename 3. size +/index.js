@@ -1,30 +1,21 @@
-var input= document.querySelector("#input")
-var buttonPlus = document.querySelector("#button-plus")
-var buttonMinus = document.querySelector("#button-minus")
-var outputEl = document.querySelector("#output")
+var text = document.querySelector("#text");
+var buttonPlus = document.querySelector("#button-plus");
+var buttonMinus = document.querySelector("#button-minus");
 
+buttonPlus.addEventListener("click", plus);
+buttonMinus.addEventListener("click", minus);
 
-buttonPlus.addEventListener("click",function addtwo(){
-    var inputData = input.value
-    style = window.getComputedStyle(outputEl, null).getPropertyValue('font-size');
-    currentSize = parseFloat(style);
-    outputEl.style.fontSize =(currentSize + 2) + 'px';
-    outputEl.textContent= inputData
+let defaultText = 16;
 
-})
+function plus() {
+  defaultText = defaultText + 2;
+  text.style.fontSize = `${defaultText}px`;
+}
 
-buttonMinus.addEventListener("click",function removetwo(){
-    var inputData = input.value
-    style = window.getComputedStyle(outputEl, null).getPropertyValue('font-size');
-    currentSize = parseFloat(style);
-    outputEl.style.fontSize =(currentSize -2) + 'px';
-    outputEl.textContent= inputData
-})
-
-
-
-
-
+function minus() {
+  defaultText = defaultText - 2;
+  text.style.fontSize = `${defaultText}px`;
+}
 
 // const text = document.querySelector("#text");
 // const bigBtn = document.querySelector("#big-btn");
@@ -35,7 +26,7 @@ buttonMinus.addEventListener("click",function removetwo(){
 
 // bigBtn.addEventListener('click', ()=>{
 //     number += 2;
-//     text.style.fontSize= `${number}px`;  
+//     text.style.fontSize= `${number}px`;
 // });
 
 // smallBtn.addEventListener('click', ()=>{

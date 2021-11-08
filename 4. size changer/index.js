@@ -1,41 +1,33 @@
-var input = document.querySelector(".input")
-var btnOne = document.querySelector("#button1")
-var btnTwo = document.querySelector("#button2")
-var btnThree = document.querySelector("#button3")
-var outputEl = document.querySelector("#output")
+var input = document.querySelector(".input");
+var btnOne = document.querySelector("#button1");
+var btnTwo = document.querySelector("#button2");
+var btnThree = document.querySelector("#button3");
+var outputEl = document.querySelector("#output");
 
-btnOne.addEventListener('click',function clickHandler1(){
-    var inputData = input.value
-    outputEl.innerHTML = `<h1>${inputData}</h1>`
+btnOne.addEventListener("click", firstSize);
+btnTwo.addEventListener("click", secondSize);
+btnThree.addEventListener("click", thirdSize);
 
-})
+function firstSize() {
+  let inputText = input.value;
+  outputEl.innerHTML = `<h1>${inputText}</h1>`;
+}
 
+function secondSize() {
+  let inputText = input.value;
+  outputEl.innerHTML = `<h2>${inputText}</h2>`;
+}
 
-btnTwo.addEventListener('click',function clickHandler1(){
-    var inputData = input.value
-    outputEl.innerHTML = `<h2>${inputData}</h2>`
-
-})
-
-
-
-btnThree.addEventListener('click',function clickHandler1(){
-    var inputData = input.value
-    outputEl.innerHTML = `<h3>${inputData}</h3>`
-})
-
-
-
-
-
-
+function thirdSize() {
+  let inputText = input.value;
+  outputEl.innerHTML = `<h3>${inputText}</h3>`;
+}
 
 // const inputText = document.querySelector("#input-text");
 // const h1Btn = document.querySelector("#h1-btn");
 // const h2Btn = document.querySelector("#h2-btn");
 // const h3Btn = document.querySelector("#h3-btn");
 // const outputDiv = document.querySelector("#output");
-
 
 // function headOne(text) {
 //     let h1 = document.createElement("h1");
@@ -66,10 +58,6 @@ btnThree.addEventListener('click',function clickHandler1(){
 //     outputDiv.text = headThree(inputText.value);
 // }
 // h3Btn.addEventListener("click", toH3);
-
-
-
-
 
 // h1Btn.addEventListener("click", ()=>{
 //     let number = 32;
