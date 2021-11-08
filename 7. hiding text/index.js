@@ -1,9 +1,10 @@
 
 const text = document.querySelector("#text");
-function toggleText(){
-    if (text.style.display === "none") {
-      text.style.display = "block";
-    } else {
+const hideBtn = document.querySelector('#hide-btn')
+hideBtn.addEventListener('click',function toggleText(){
+    if (text.style.display === "block") {
       text.style.display = "none";
+    } else {
+      text.style.display = "block";
     }
-  }
+  })
