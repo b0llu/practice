@@ -1,17 +1,29 @@
 const input = document.querySelector("#input");
-const checkBtn = document.querySelector("#check-btn");
+const button = document.querySelector("#check-btn");
 const outputDiv = document.querySelector("#output");
 
-checkBtn.addEventListener("click", ()=>{
-    if (input.value.length < 10) {
-        outputDiv.innerHTML = "Minimum and Maximum length for the password is 10";
+button.disabled = true;
+button.addEventListener('click', checkPassword);
+
+function checkPassword() {
+  let value = input.value;
+    
+  if (value.length < 10) {
+    
+    outputDiv.innerText = "error";
+    input.style.border = " 1px solid red ";
+  } else {
+    
+    outputDiv.innerText = "successful";
+    input.style.border = " 1px solid green ";
+  }
+}
+
+input.addEventListener('input', function() {
+    let value = input.value;
+    if (value.length < 10) {
+        button.disabled = true;
     } else {
-        outputDiv.innerHTML = "You Logged In!"
+        button.disabled = false;
     }
-
-    if (input.value.length < 10 || input.value.length > 10) {
-        input.style.backgroundColor = "red";
-    } else 
-    input.style.backgroundColor = "green"
-
 })
