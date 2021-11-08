@@ -6,35 +6,39 @@ const mulBtn = document.querySelector("#mul-btn");
 const divBtn = document.querySelector("#div-btn");
 let outputBox = document.querySelector("#output-box");
 
-function addition(numOne, numTwo) {
-    return Number(numOne) + Number(numTwo)
-}
- 
-function subtraction(numOne, numTwo) {
-    return Number(numOne) - Number(numTwo)
-}
+addBtn.addEventListener("click", addition);
+subBtn.addEventListener("click", subtraction);
+mulBtn.addEventListener("click", multiplication);
+divBtn.addEventListener("click", division);
 
-function multiplication(numOne, numTwo) {
-    return Number(numOne) * Number(numTwo)
-}
+function addition(value1, value2) {
+  var value1 = Number(numOne.value);
+  var value2 = Number(numTwo.value);
 
-function division(numOne, numTwo) {
-    return Number(numOne) / Number(numTwo)
+  let sum = value1 + value2;
+  outputBox.innerHTML = sum;
 }
 
+function subtraction(value1, value2) {
+  var value1 = Number(numOne.value);
+  var value2 = Number(numTwo.value);
 
-addBtn.addEventListener("click", ()=>{
-    outputBox.textContent = addition(numOne.value, numTwo.value);  
-})
+  let sub = value1 - value2;
+  outputBox.innerHTML = sub;
+}
 
-subBtn.addEventListener("click", ()=>{
-    outputBox.textContent = subtraction(numOne.value, numTwo.value);  
-})
+function multiplication(value1, value2) {
+  var value1 = Number(numOne.value);
+  var value2 = Number(numTwo.value);
 
-mulBtn.addEventListener("click", ()=>{
-    outputBox.textContent = multiplication(numOne.value, numTwo.value);  
-})
+  let mul = value1 * value2;
+  outputBox.innerHTML = mul;
+}
 
-divBtn.addEventListener("click", ()=>{
-    outputBox.textContent = division(numOne.value, numTwo.value);  
-})
+function division(value1, value2) {
+  var value1 = Number(numOne.value);
+  var value2 = Number(numTwo.value);
+
+  let div = value1 / value2;
+  outputBox.innerHTML = div;
+}
