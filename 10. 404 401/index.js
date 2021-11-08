@@ -10,7 +10,7 @@ error401Btn.addEventListener("click", function error401 () {
     fetch(serverURL1)
     .then(function(response){
         if (response.status === 401) {
-           alert("You Are Not Logged In")
+        alert("You Are Not Logged In")
         } else 
         alert("Page Not Found")
     }) 
@@ -19,14 +19,12 @@ error401Btn.addEventListener("click", function error401 () {
     // } )
 })
 
-// error404Btn.addEventListener("click", function error404 (){
-//     fetch(serverURL2)
-//     .then(function(response){
-//         if (response.status === 404) {
-//             console.log(json)
-//         }
-//     })
-//     .catch(function(){
-//         alert("Page Not Found")
-//     })
-// })
+error404Btn.addEventListener("click", function error404 (){
+    fetch(serverURL2)
+    .then(function(response){
+        if (response.status === 404) {
+            alert('Page Not Found')
+        } else 
+        alert("Page Not Found")
+    })
+})
