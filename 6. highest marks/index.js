@@ -1,69 +1,55 @@
-var readlineSync = require('readline-sync');
+var readlineSync = require("readline-sync");
 
-var data = [
-  {
-  name: "",
-  unittest: "",
-  prefinal: "",
-  final: ""
-  },{
-  name: "",
-  unittest: "",
-  prefinal: "",
-  final: ""
-  },{
-  name: "",
-  unittest: "",
-  prefinal: "",
-  final: ""
-  },{
-  name: "",
-  unittest: "",
-  prefinal: "",
-  final: ""
-  },{
-  name: "",
-  unittest: "",
-  prefinal: "",
-  final: ""
-  },{
-  name: "",
-  unittest: "",
-  prefinal: "",
-  final: ""
-  }
-]
+const studentData = [];
 
-var arrayOfMarks = []
-var sumOfMarks = []
+for (let i = 1; i <= 2; i++) {
+  var student = {
+    name: readlineSync.question(`Enter the name of student ${i} \n`),
+    unitTestMark: Number(
+      readlineSync.question("Enter the unit test marks of the student \n")
+    ),
+    preFinalMark: Number(
+      readlineSync.question("Enter the pre final marks of the student \n")
+    ),
+    finalMark: Number(
+      readlineSync.question("Enter the final marks of the student \n")
+    ),
 
-sum = 0
-for (i = 1; i < 6; i++) {
-  console.log(`student ${i}`)
-  var name = readlineSync.question("Enter Your Name = ")
-  data[i].name = name
+    sumTotalMark: function () {
+      return this.unitTestMark + this.preFinalMark + this.finalMark;
+    },
+  };
 
-  var unittest = readlineSync.question("Enter Unit Test Marks = ")
-  data[i].unittest = unittest
-  var unitMarks = Number(unittest)
-
-  var prefinal = readlineSync.question("Enter Pre Final Marks = ")
-  data[i].prefinal = prefinal
-  var preFinalMarks = Number(prefinal)
-
-  var final = readlineSync.question("Enter Final Marks = ")
-  data[i].final = final
-  var finalMarks = Number(final)
-
-  arrayOfMarks.push(data[i].final)
-
-  var sum = unitMarks + preFinalMarks + finalMarks
-
-  sumOfMarks.push(sum) 
+  studentData.push(student);
 }
 
-console.log(`Highest Marks Are ${Math.max(...arrayOfMarks)}`)
+function getHighestMark(studentData) {
+  let highestScore = 0;
+  let topper = " ";
+  for (let i = 0; i < studentData.length; i++) {
+    let studentScore = studentData[i].sumTotalMark();
 
-const reducer = (previousValue, currentValue) => previousValue + currentValue;
+    if (studentScore > highestScore) {
+      highestScore = studentScore;
+      topper = studentData[i].name;
+    }
+  }
 
-console.log(`Average of 5 Students is ${sumOfMarks.reduce(reducer) / 5}`)
+  return topper;
+}
+
+let rankHolder = getHighestMark(studentData);
+console.log("topper is " + rankHolder);
+
+function getAverage(studentData) {
+  let sum = 0;
+
+  for (let i = 0; i < studentData.length; i++) {
+    sum = sum + studentData[i].sumTotalMark();
+  }
+  var average = sum / 2;
+  return average;
+}
+
+let averageDisplay = getAverage(studentData);
+console.log(averageDisplay);
