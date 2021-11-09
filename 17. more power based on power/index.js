@@ -1,20 +1,24 @@
 const check = document.querySelector("#check");
 
-var Ram = {
-    name: "Ram",
-    power: 2500,
-    yuga: "Treta"
-}
+var ram = {
+  name: "ram",
+  yuga: "treta",
+  power: 2500,
+};
 
-var Krishna = {
-    name: "Krishna",
-    power: 2325,
-    yuga: "Dwapar"
-}
+var krishna = {
+  name: "krishna",
+  yuga: "dwarpa",
+  power: 2325,
+};
 
-check.addEventListener("click", ()=> {
-    if ((Ram.power) + 35 > (Krishna.power) + 35) {
-        console.log("Ram is more Powerfull");
-    } else
-    console.log("Krishna is more Powerfull");
-})
+check.addEventListener("click", function () {
+  var totalPower1 = ram.power + ram.name.length * 35;
+  var totalPower2 = krishna.power + krishna.name.length * 35;
+
+  if (totalPower1 > totalPower2) {
+    console.log("ram is more powerfull");
+  } else {
+    console.log("krishna is more powerfull");
+  }
+});
