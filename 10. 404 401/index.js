@@ -5,8 +5,7 @@ var serverURL1 = "https://unitube-server.herokuapp.com/playlists/";
 var serverURL2 = "https://jsonplaceholder.typicode.com/dummyUsers";
 
 error401Btn.addEventListener("click", function error401() {
-  fetch(serverURL1)
-  .then(function (response) {
+  fetch(serverURL1).then((response) => {
     if (response.status === 401) {
       alert("You Are Not Logged In");
     } else alert(":)");
@@ -14,8 +13,7 @@ error401Btn.addEventListener("click", function error401() {
 });
 
 error404Btn.addEventListener("click", function error404() {
-  fetch(serverURL2)
-  .then(function (response) {
+  fetch(serverURL2).then(function (response) {
     if (response.status === 404) {
       alert("Page Not Found");
     } else alert(":)");
