@@ -11,7 +11,7 @@ subBtn.addEventListener("click", subtraction);
 mulBtn.addEventListener("click", multiplication);
 divBtn.addEventListener("click", division);
 
-function addition(value1, value2) {
+function addition() {
   var value1 = Number(numOne.value);
   var value2 = Number(numTwo.value);
 
@@ -19,7 +19,7 @@ function addition(value1, value2) {
   outputBox.innerHTML = sum;
 }
 
-function subtraction(value1, value2) {
+function subtraction() {
   var value1 = Number(numOne.value);
   var value2 = Number(numTwo.value);
 
@@ -27,7 +27,7 @@ function subtraction(value1, value2) {
   outputBox.innerHTML = sub;
 }
 
-function multiplication(value1, value2) {
+function multiplication() {
   var value1 = Number(numOne.value);
   var value2 = Number(numTwo.value);
 
@@ -35,7 +35,7 @@ function multiplication(value1, value2) {
   outputBox.innerHTML = mul;
 }
 
-function division(value1, value2) {
+function division() {
   var value1 = Number(numOne.value);
   var value2 = Number(numTwo.value);
 
